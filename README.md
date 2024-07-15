@@ -1,6 +1,4 @@
-## 项目名称
-
-BigDataCDinfo - 基于大数据技术的新冠疫情防控
+#  BigDataCDinfo - 基于大数据技术的新冠疫情防控
 
 ## 项目描述
 
@@ -206,3 +204,11 @@ finalTask.coalesce(1).write.text(args(3))
 
 - [Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
 - [Spark性能优化指南——高级篇](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html)
+
+## 许可证
+
+本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件。
+
+---
+
+祝大家都能在大学有所收获，假期愉快！
