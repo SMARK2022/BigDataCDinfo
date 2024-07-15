@@ -151,10 +151,47 @@ finalTask.coalesce(1).write.text(args(3))
 
 ## 执行步骤
 
+### 准备工作
+
+1. 克隆项目：
+   ```bash
+   git clone [项目地址]
+   ```
+
+2. 在IDEA中打开项目，并修改 `Update5273` 的配置，编译项目并打包为 JAR 文件。
+
+### 正式执行
+
 1. 下载并解压数据。
-2. 上传数据至HDFS。
-3. 使用Spark进行数据处理。
-4. 下载结果并提交。
+
+2. 将数据上传至HDFS：
+   ```bash
+   hdfs dfs -mkdir /Bigdata
+
+   # 上传文件到HDFS
+   hdfs dfs -put ~/Bigdata/cdinfo.txt /Bigdata/cdinfo.txt
+   hdfs dfs -put ~/Bigdata/infected2.txt /Bigdata/infected2.txt
+   ```
+
+3. 使用Spark进行数据处理：
+   ```bash
+   spark-submit \
+     --master yarn \
+     --deploy-mode cluster \
+     --class Update5273 \
+     --conf spark.default.parallelism=120 \
+     --conf spark.executor.memory=4g \
+     --conf spark.executor.cores=4 \
+     --conf spark.cores.max=96 \
+     --num-executors 5 \
+     ~/IDEAout/Update5273.jar \
+     hdfs:///Bigdata/cdinfo.txt \
+     hdfs:///Bigdata/infected2.txt \
+     redmark_final.txt \
+     superredmark_final.txt
+   ```
+
+4. 在HDFS上下载结果并提交。
 
 ## 总结
 
