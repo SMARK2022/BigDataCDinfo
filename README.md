@@ -170,7 +170,7 @@ finalTask.coalesce(1).write.text(args(3))
 
    # 上传文件到HDFS
    hdfs dfs -put ~/Bigdata/cdinfo.txt /Bigdata/cdinfo.txt
-   hdfs dfs -put ~/Bigdata/infected2.txt /Bigdata/infected2.txt
+   hdfs dfs -put ~/Bigdata/infected.txt /Bigdata/infected.txt
    ```
 
 3. 使用Spark进行数据处理：
@@ -186,7 +186,7 @@ finalTask.coalesce(1).write.text(args(3))
      --num-executors 5 \
      ~/IDEAout/Update5273.jar \
      hdfs:///Bigdata/cdinfo.txt \
-     hdfs:///Bigdata/infected2.txt \
+     hdfs:///Bigdata/infected.txt \
      redmark_final.txt \
      superredmark_final.txt
    ```
