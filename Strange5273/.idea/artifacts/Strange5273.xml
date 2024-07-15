@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Strange5273">
+    <output-path>$USER_HOME$/IDEAout</output-path>
+    <root id="archive" name="Strange5273.jar">
+      <element id="module-output" name="Strange5273" />
+    </root>
+  </artifact>
+</component>
